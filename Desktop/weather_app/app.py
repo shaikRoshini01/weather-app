@@ -69,4 +69,4 @@ def index():
             return render_template("index.html", error=str(e),current_time=current_time)
     return render_template("index.html",city=city, weather_data=weather_data,current_weather=current_weather, alerts=alerts, current_time=current_time)
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0",port=int(os.environ.get("PORT",5000)))
