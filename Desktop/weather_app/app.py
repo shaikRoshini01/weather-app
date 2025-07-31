@@ -2,11 +2,13 @@ from flask import Flask, render_template, request
 import requests
 import matplotlib.pyplot as plt
 from datetime import datetime
+from dotenv import load_dotenv
 import os
 
-app = Flask(__name__)
-API_KEY = "66cbcd7108895f71e51e53e2d032bbdc"  # 🔁 Replace with your OpenWeatherMap API key
+load_dotenv()
+API_KEY=os.getenv("API_KEY")
 
+app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     weather_data = None
@@ -33,7 +35,7 @@ def index():
             wind = [item['wind']['speed'] for item in data['list']]
             rain = [item.get('rain', {}).get('3h', 0) for item in data['list']]
 
-            # 🔔 Generate alerts
+            #  Generate alerts
             for i, item in enumerate(data["list"][:8]):
                 dt = dates[i].strftime("%d %b %I:%M %p")
                 temp = temps[i]
@@ -46,7 +48,7 @@ def index():
                 if "⚠️" in alert or "🌧️" in alert:
                     alerts.append(alert)
 
-            # 📊 Create plot
+            #  Create plot
             plt.figure(figsize=(12, 6))
             plt.plot(dates, temps, label="Temp (°C)", color="tomato", marker="o")
             plt.plot(dates, humidity, label="Humidity (%)", color="dodgerblue", marker="x")
