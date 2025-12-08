@@ -1,8 +1,7 @@
 .env
-Desktop/
+*.env
 *.zip
 __pycache__/
-*.png
-*.jpg
-*.pyc
-.env
+venv/
+env/
+.vscode/
