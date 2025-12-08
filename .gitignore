@@ -1,0 +1,7 @@
+.env
+Desktop/
+*.zip
+__pycache__/
+*.png
+*.jpg
+*.pyc

@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: weather-app
-    runtime: python
-    buildCommand: ""
-    startCommand: gunicorn app:app
-    envVars:
-      - key: PORT
-        value: 10000
