@@ -7,6 +7,7 @@ import os
 
 load_dotenv()
 API_KEY=os.getenv("API_KEY")
+print("API KEY from .env:",API_KEY)
 
 app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
