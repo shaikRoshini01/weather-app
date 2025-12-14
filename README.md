@@ -49,7 +49,3 @@ Render – Deploy online
 
 5. Results appear neatly on the web page.
 
----
-
-🌐 Live Demo
-Render Link: https://weather-app-jw9m.onrender.com/
