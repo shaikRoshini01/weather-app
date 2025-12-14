@@ -5,8 +5,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
-API_KEY=os.getenv("API_KEY")
+API_KEY=os.environ.get("API_KEY")
 print("API KEY from .env:",API_KEY)
 
 app = Flask(__name__)
