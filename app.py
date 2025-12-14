@@ -19,7 +19,7 @@ def index():
     current_time = datetime.now().strftime("%d %b %Y - %I:%M %p")
     if request.method == "POST":
         city = request.form["city"]
-        url = f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_KEY}&units=metric"
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city()}&appid={API_KEY}"
 
         try:
             response = requests.get(url)
